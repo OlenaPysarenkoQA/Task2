@@ -50,6 +50,12 @@ class Program
 
         return new string(result);
     }
+    static string SortRandomString(string input)
+    {
+        char[] sortedChars = input.ToCharArray();
+        Array.Sort(sortedChars);
+        return new string(sortedChars);
+    }
     static string CompressDNA(string input)
     {
         if (string.IsNullOrEmpty(input))
@@ -148,7 +154,8 @@ class Program
             Console.Write("Task3: Input the desired number of characters: ");
             int length = int.Parse(Console.ReadLine());
             string randomString = GenerateRandomString(length);
-            Console.WriteLine("Random string: " + randomString);
+            string sortedRandomString = SortRandomString(randomString);
+            Console.WriteLine("Random string: " + sortedRandomString);
 
             //Task4: "Дірка" (пропущене число) у масиві.
             int[] array = { 1, 3, 0, 2, 5, 7, 6, 8, 9 };
